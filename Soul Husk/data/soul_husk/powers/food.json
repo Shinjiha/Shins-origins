@@ -62,7 +62,7 @@
                 },
                 {
                     "type": "origins:chance",
-                    "chance": 0.8,
+                    "chance": 0.5,
                     "action": {
                         "type": "origins:execute_command",
                         "command": "give @s minecraft:lantern"

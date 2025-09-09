@@ -1,5 +1,10 @@
 {
 	"powers": [
+		"soul_husk:1",
+		"soul_husk:2",
+		"soul_husk:3",
+		"soul_husk:4",
+		"soul_husk:5",
 		"soul_husk:food",
 		"soul_husk:passives",
 		"soul_husk:sink"
