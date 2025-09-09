@@ -28,9 +28,49 @@
             }
         },
         "damage_condition": {
-            "type": "origins:in_tag",
-            "tag": "minecraft:fall"
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:is_fall"
+                },
+                {
+                    "type": "origins:amount",
+                    "comparison": ">=",
+                    "compare_to": 4
+                }
+            ]
         },
         "cooldown": 1
+    },
+    "vegetarian_debuff": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "origins:meat"
+                    }
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "tag": "origins:ignore_diet"
+                        },
+                        {
+                            "tag": "origins:vegetarian"
+                        }
+                    ],
+                    "inverted": true
+                }
+            ]
+        },
+        "loading_priority": 1
     }
 }

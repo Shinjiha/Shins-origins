@@ -20,7 +20,7 @@
             "command": "scale set pehkui:step_height 1.5"
         }
     },
-    "Sprint": {
+    "sprint": {
         "type": "origins:conditioned_attribute",
         "modifier": {
             "attribute": "minecraft:generic.movement_speed",
@@ -28,9 +28,29 @@
             "value": 0.2,
             "name": "Increased sprinting speed"
         },
-        "tick_rate": 20,
+        "tick_rate": 1,
         "condition": {
             "type": "origins:sprinting"
+        }
+    },
+    "armor": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 2,
+            "name": "armor"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "feet",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "minecraft:trimmable_armor"
+                }
+            }
         }
     }
 }

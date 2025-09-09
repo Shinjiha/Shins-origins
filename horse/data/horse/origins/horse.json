@@ -1,6 +1,6 @@
 {
 	"powers": [
-		"horse:spawn_spawn",
+		"horse:spawn",
 		"horse:buffs",
 		"horse:jump",
 		"horse:debuffs"

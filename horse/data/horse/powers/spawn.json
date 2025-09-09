@@ -1,8 +1,14 @@
 {
     "hidden": true,
     "type": "origins:multiple",
+    "horse_shape": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1
+    },
     "spawn": {
-        "name": "Small",
+        "name": "Horse",
         "hidden": false,
         "description": "You're a horse.",
         "type": "origins:action_on_callback",
@@ -20,34 +26,49 @@
             "command": "walkers switchShape @p minecraft:horse"
         }
     },
-    "vegetarian_debuff": {
-        "type": "origins:prevent_item_use",
-        "item_condition": {
-            "type": "origins:and",
-            "conditions": [
-                {
-                    "type": "origins:food"
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": {
-                        "tag": "origins:meat"
+    "human": {
+        "type": "origins:active_self",
+        "key": "key.origins.secondary_active",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "spawn_horse_shape",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "walkers switchShape @p normal"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "spawn_horse_shape",
+                        "change": 0
                     }
-                },
-                {
-                    "type": "origins:ingredient",
-                    "ingredient": [
-                        {
-                            "tag": "origins:ignore_diet"
-                        },
-                        {
-                            "tag": "origins:vegetarian"
-                        }
-                    ],
-                    "inverted": true
-                }
-            ]
+                ]
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "walkers switchShape @p minecraft:horse"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "spawn_horse_shape",
+                        "change": 1
+                    }
+                ]
+            }
         },
-        "loading_priority": 1
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": true
+        }
     }
 }
