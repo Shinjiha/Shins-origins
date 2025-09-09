@@ -1,9 +1,17 @@
 {
 	"powers": [
+		"horse:1",
+		"horse:2",
+		"horse:3",
+		"horse:4",
+		"horse:5",
 		"horse:spawn",
 		"horse:buffs",
 		"horse:jump",
-		"horse:debuffs"
+		"horse:debuffs",
+		"horse:leash/leash",
+		"horse:leash/leashanchor",
+		"horse:leash/leasher"
 	],
 	"icon": "minecraft:saddle",
 	"order": 11,

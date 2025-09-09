@@ -1,4 +1,5 @@
 {
+    "hidden": true,
     "type": "origins:launch",
     "cooldown": 600,
     "hud_render": {

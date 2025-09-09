@@ -1,0 +1,5 @@
+{
+  "type": "origins:simple",
+  "name": "Jump",
+  "description": "You can jump 5.5 blocks up in the air every few seconds."
+}
