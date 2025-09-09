@@ -1,5 +1,8 @@
 {
 	"powers": [
+		"soul_husk:food",
+		"soul_husk:passives",
+		"soul_husk:sink"
 	],
 	"icon": "minecraft:soul_lantern",
 	"order": 11,
