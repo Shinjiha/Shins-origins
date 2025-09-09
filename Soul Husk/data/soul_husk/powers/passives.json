@@ -1,0 +1,116 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "health": {
+        "type": "origins:modify_attribute",
+        "attribute": "minecraft:generic.health",
+        "modifier": {
+            "operation": "set_total",
+            "value": 20
+        }
+    },
+    "knockback": {
+        "type": "origins:modify_attribute",
+        "attribute": "minecraft:knockback_resistance",
+        "modifier": {
+            "operation": "set_total",
+            "value": 1
+        }
+    },
+    "armor": {
+        "type": "origins:modify_attribute",
+        "attribute": "minecraft:generic.armor",
+        "modifier": {
+            "operation": "add_base_early",
+            "value": 5
+        }
+    },
+    "size": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "scale set @s 1.7"
+        },
+        "execute_chosen_when_orb": true,
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "scale set @s 1"
+        },
+        "entity_action_respawned": {
+            "type": "origins:execute_command",
+            "command": "scale set @s 1.7"
+        }
+    },
+    "particles": {
+        "type": "origins:particle",
+        "particle": "minecraft:soul_fire_flame",
+        "frequency": 4
+    },
+    "sleep": {
+        "type": "origins:prevent_block_use",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:beds"
+        }
+    },
+    "spawn": {
+        "type": "origins:action_on_block_use",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "spawnpoint @s"
+        },
+        "block_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:lodestone"
+                },
+                {
+                    "type": "origins:block",
+                    "block": "minecraft:respawn_anchor"
+                }
+            ]
+        }
+    },
+    "revive": {
+        "type": "origins:prevent_death",
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:weakness",
+                "duration": 400,
+                "amplifier": 1
+            }
+        }
+    },
+    "no_totem": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:drop_inventory",
+            "slots": [
+                "weapon.offhand"
+            ]
+        },
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:totem_of_undying"
+                }
+            }
+        }
+    },
+    "items": {
+        "type": "origins:starting_equipment",
+        "stacks": [
+            {
+                "item": "minecraft:soul_lantern",
+                "amount": 5
+            }
+        ]
+    }
+}

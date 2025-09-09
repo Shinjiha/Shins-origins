@@ -1,0 +1,9 @@
+{
+	"powers": [
+	],
+	"icon": "minecraft:soul_lantern",
+	"order": 11,
+	"impact": 3,
+	"name": "Soul Husk",
+	"description": "Origin for Train."
+}

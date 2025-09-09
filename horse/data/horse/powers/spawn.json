@@ -33,7 +33,7 @@
             "type": "origins:if_else",
             "condition": {
                 "type": "origins:resource",
-                "resource": "spawn_horse_shape",
+                "resource": "horse:spawn_horse_shape",
                 "comparison": "==",
                 "compare_to": 1
             },
@@ -46,7 +46,7 @@
                     },
                     {
                         "type": "origins:change_resource",
-                        "resource": "spawn_horse_shape",
+                        "resource": "horse:spawn_horse_shape",
                         "change": 0
                     }
                 ]
@@ -60,7 +60,7 @@
                     },
                     {
                         "type": "origins:change_resource",
-                        "resource": "spawn_horse_shape",
+                        "resource": "horse:spawn_horse_shape",
                         "change": 1
                     }
                 ]

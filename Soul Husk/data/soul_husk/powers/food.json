@@ -1,0 +1,129 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "nosat": {
+        "type": "origins:modify_food",
+        "saturation_modifier": {
+            "name": "No saturation",
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "sweets": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:in_tag",
+            "tag": "soul_husk:sweets",
+            "inverted": true
+        }
+    },
+    "1": {
+        "type": "origins:modify_crafting",
+        "recipe": "minecraft:soul_lantern",
+        "result": {
+            "item": "minecraft:air"
+        }
+    },
+    "2": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:instant_health",
+                "duration": 1,
+                "amplifier": 5
+            }
+        },
+        "interval": 50,
+        "condition": {
+            "type": "origins:block_in_radius",
+            "block_condition": {
+                "type": "origins:block",
+                "block": "minecraft:soul_campfire"
+            },
+            "radius": 3,
+            "shape": "cube",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "3": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:chance",
+                    "chance": 0.8,
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "give @s minecraft:lantern"
+                    }
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:instant_health",
+                        "duration": 1,
+                        "amplifier": 5,
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": false
+                    }
+                }
+            ]
+        },
+        "cooldown": 10,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.use",
+            "continuous": true
+        },
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:soul_lantern"
+                }
+            }
+        }
+    },
+    "4": {
+        "type": "origins:self_action_on_kill",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "clear @s minecraft:lantern 1"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "give @s minecraft:soul_lantern"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:lantern"
+                }
+            }
+        }
+    }
+}
