@@ -98,6 +98,14 @@
                             "type": "origins:empty"
                         }
                     }
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 6
+                    }
                 }
             ]
         },
@@ -532,6 +540,21 @@
                         "show_particles": false,
                         "show_icon": true
                     }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:origin",
+                        "origin": "fleshgait:fleshgait",
+                        "layer": "fleshgait:severe"
+                    },
+                    "if_action": {
+                        "type": "origins:execute_command",
+                        "command": "power revoke @p fleshgait:severe_fear2"
+                    },
+                    "else_action": {
+                        "type": "origins:simple"
+                    }
                 }
             ]
         }
@@ -570,6 +593,21 @@
                 {
                     "type": "origins:execute_command",
                     "command": "power grant @p fleshgait:passives_fix"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:origin",
+                        "origin": "fleshgait:fleshgait",
+                        "layer": "fleshgait:severe"
+                    },
+                    "if_action": {
+                        "type": "origins:execute_command",
+                        "command": "power grant @p fleshgait:severe_fear2"
+                    },
+                    "else_action": {
+                        "type": "origins:simple"
+                    }
                 }
             ]
         }
