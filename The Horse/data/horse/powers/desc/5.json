@@ -1,5 +1,6 @@
 {
   "type": "origins:simple",
+    "hidden": false,
   "name": "Mount",
   "description": "You're still just a horse, you can be mounted and leashed by others."
 }

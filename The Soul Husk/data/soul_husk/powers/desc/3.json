@@ -1,5 +1,6 @@
 {
   "type": "origins:simple",
+    "hidden": false,
   "name": "§8Burden §8of §8the §8Ages",
   "description": "Cannot sleep in beds, instead can only set spawn point with respawn anchors and lodestones. Phantoms won't bother you."
 }

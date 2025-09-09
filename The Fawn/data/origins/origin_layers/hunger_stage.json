@@ -18,5 +18,5 @@
     "default_origin": "fleshgait:full",
     "auto_choose": true,
     "name": "temperament",
-    "hidden": false
+    "hidden": true
 }

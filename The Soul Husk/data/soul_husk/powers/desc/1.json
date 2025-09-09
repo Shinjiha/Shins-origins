@@ -1,5 +1,6 @@
 {
   "type": "origins:simple",
+    "hidden": false,
   "name": "§6Armoured §6Fortress",
   "description": "As a hulking mass of armor, you have increased health, defense and don't take knockback. Due to your weight you sink when in water."
 }

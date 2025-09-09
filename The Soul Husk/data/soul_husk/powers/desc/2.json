@@ -1,5 +1,6 @@
 {
   "type": "origins:simple",
+    "hidden": false,
   "name": "§5Soul §5Nourishment",
   "description": "The only way to heal is to consume souls, you can trap souls in lanterns and consume them, or idle close to soul campfires to heal."
 }

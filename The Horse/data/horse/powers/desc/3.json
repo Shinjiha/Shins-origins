@@ -1,5 +1,6 @@
 {
   "type": "origins:simple",
+    "hidden": false,
   "name": "Shiny new Horseshoes",
   "description": "You gan additional armor to all boot armor."
 }

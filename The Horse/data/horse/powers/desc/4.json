@@ -1,5 +1,6 @@
 {
   "type": "origins:simple",
+    "hidden": false,
   "name": "Fragile legs...",
   "description": "As a horse, your anatomy is oddly subpar for your only job, when taking more than 4 fall damage, you limp and struggle to walk for a short moment."
 }

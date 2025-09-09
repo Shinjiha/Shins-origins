@@ -1,0 +1,43 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "tag_insert": {
+        "type": "origins:action_on_being_used",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:execute_command",
+                "command": "tag @s add leasher"
+            }
+        }
+    },
+    "velo": {
+        "type": "apoli:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "apoli:area_of_effect",
+                    "bientity_action": {
+                        "type": "origins:add_velocity",
+                        "z": -0.03,
+                        "set": false,
+                        "include_target": false,
+                        "radius": 8
+                    }
+                },
+                {
+                    "type": "apoli:area_of_effect",
+                    "bientity_action": {
+                        "type": "origins:add_velocity",
+                        "z": 0,
+                        "set": false,
+                        "include_target": false,
+                        "radius": 7
+                    }
+                }
+            ]
+        }
+    }
+}

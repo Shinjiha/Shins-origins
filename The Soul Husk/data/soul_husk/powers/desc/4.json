@@ -1,5 +1,6 @@
 {
   "type": "origins:simple",
+    "hidden": false,
   "name": "§dSweet §dTooth",
   "description": "Mortal meals cannot satisfy your hunger fo- !! Is that cake?"
 }

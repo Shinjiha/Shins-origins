@@ -27,5 +27,6 @@
     ],
     "impact": 3,
     "icon": "minecraft:rotten_flesh",
-    "hidden": true
+    "hidden": true,
+    "unchoosable": true
 }

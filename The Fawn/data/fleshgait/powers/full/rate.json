@@ -1,5 +1,6 @@
 {
     "type": "origins:modify_exhaustion",
+    "hidden": true,
     "modifier": {
         "name": "Increased exhaustion",
         "operation": "multiply_base",
