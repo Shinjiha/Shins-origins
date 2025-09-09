@@ -1,0 +1,20 @@
+{
+	"powers": [
+		"tree:photosynthesise",
+		"tree:shed_wood",
+		"tree:vulnerabilities",
+		"tree:root_rooted",
+		"tree:root_toggle_on",
+		"tree:root_toggle_off",
+		"tree:root_leaf",
+		"tree:stuck_fix",
+		"tree:harvest_wood",
+		"tree:attributes",
+		"tree:pluck_apples"
+	],
+	"icon": "minecraft:oak_sapling",
+	"order": 10,
+	"impact": 3,
+	"name": "Treefolk",
+	"description": "You are but a tree, who can not remember their past. Go, find people, and let them use you."
+}

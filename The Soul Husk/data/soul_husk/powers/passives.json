@@ -3,15 +3,15 @@
     "type": "origins:multiple",
     "health": {
         "type": "origins:modify_attribute",
-        "attribute": "minecraft:generic.health",
+        "attribute": "minecraft:generic.max_health",
         "modifier": {
             "operation": "set_total",
-            "value": 20
+            "value": 40
         }
     },
     "knockback": {
         "type": "origins:modify_attribute",
-        "attribute": "minecraft:knockback_resistance",
+        "attribute": "minecraft:generic.knockback_resistance",
         "modifier": {
             "operation": "set_total",
             "value": 1
@@ -56,8 +56,17 @@
     "spawn": {
         "type": "origins:action_on_block_use",
         "entity_action": {
-            "type": "origins:execute_command",
-            "command": "spawnpoint @s"
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "spawnpoint @s"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tellraw @s {\"text\":\"Spawn Set.\",\"color\":\"purple\"}"
+                }
+            ]
         },
         "block_condition": {
             "type": "origins:or",
@@ -73,15 +82,53 @@
             ]
         }
     },
-    "revive": {
+    "revives": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 6
+        }
+    },
+    "reset-revives": {
+        "type": "origins:action_on_callback",
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "*:*_revives",
+            "change": 0,
+            "operation": "set"
+        }
+    },
+    "prevent-death": {
         "type": "origins:prevent_death",
         "entity_action": {
-            "type": "origins:apply_effect",
-            "effect": {
-                "effect": "minecraft:weakness",
-                "duration": 400,
-                "amplifier": 1
-            }
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:clear_effect"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:weakness",
+                        "duration": 400,
+                        "amplifier": 1
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_revives",
+                    "change": 1
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_revives",
+            "comparison": "<",
+            "compare_to": 4
         }
     },
     "no_totem": {

@@ -8,8 +8,7 @@
 		"horse:spawn",
 		"horse:buffs",
 		"horse:jump",
-		"horse:debuffs",
-		"horse:optional_power/leash/thleash"
+		"horse:debuffs"
 	],
 	"icon": "minecraft:saddle",
 	"order": 11,
