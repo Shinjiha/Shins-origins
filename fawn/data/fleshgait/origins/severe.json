@@ -1,0 +1,27 @@
+{
+    "name": "§c§lRavenous§r§r",
+    "description": "Your hunger speaks through your skin. Animals flee in terror, and those who don’t run will fight. You're urged to stalk, to tear. You’re no longer playing human. Human food makes you ill.",
+    "powers": [    
+
+    "fleshgait:passives",
+    "fleshgait:headpat",
+    "fleshgait:uneasy",
+    "fleshgait:transform",
+
+    
+    "fleshgait:desc/18",
+    "fleshgait:desc/19",
+    "fleshgait:desc/20",
+
+    "fleshgait:moderate/shader",
+
+    "fleshgait:severe/fear2",
+    "fleshgait:severe/rate",
+    "fleshgait:severe/food",
+    "fleshgait:severe/hunger",
+    "fleshgait:severe/severe_hunger_dialogue"
+    ],
+    "unchoosable": false,
+    "impact": 2,
+    "icon":"minecraft:bone"
+}

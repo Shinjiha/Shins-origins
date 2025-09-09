@@ -1,0 +1,13 @@
+{
+	"powers": [
+		"horse:spawn_spawn",
+		"horse:buffs",
+		"horse:jump",
+		"horse:debuffs"
+	],
+	"icon": "minecraft:saddle",
+	"order": 11,
+	"impact": 3,
+	"name": "Horse",
+	"description": "Just a horse, that's it."
+}

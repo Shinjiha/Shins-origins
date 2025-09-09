@@ -1,0 +1,22 @@
+{
+    "replace": false,
+    "origins": [
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "fleshgait:fleshgait",
+                "layer": "origins:origin"
+            },
+            "origins": [
+                "fleshgait:full",
+                "fleshgait:moderate",
+                "fleshgait:severe",
+                "fleshgait:starving"
+            ]
+        }
+    ],
+    "default_origin": "fleshgait:full",
+    "auto_choose": true,
+    "name": "temperament",
+    "hidden": false
+}

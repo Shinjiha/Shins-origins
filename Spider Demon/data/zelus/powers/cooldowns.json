@@ -1,0 +1,60 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "fire_cd": {
+        "hidden": true,
+        "type": "origins:cooldown",
+        "cooldown": 600,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 15,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png"
+        }
+    },
+    "fire_immunity": {
+        "hidden": true,
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:in_fire"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:on_fire"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:fireball"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:lava"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:campfire"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "minecraft:hot_floor"
+                }
+            ]
+        },
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "zelus:cooldowns_fire_cd",
+                "comparison": "==",
+                "compare_to": 0
+            }
+        },
+        "modifier": {
+            "operation": "set_total",
+            "value": -1
+        }
+    }
+}

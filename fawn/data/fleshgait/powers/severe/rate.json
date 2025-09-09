@@ -1,0 +1,8 @@
+{"hidden": true,
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "name": "Origin modifier",
+      "value": 0.5,
+      "operation": "multiply_base"
+    }
+  }

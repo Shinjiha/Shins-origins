@@ -1,0 +1,12 @@
+{
+    "pack": {
+        "name": "fleshgait",
+        "id": "fleshgait",
+        "pack_format": 15,
+        "version": "1.0.0",
+        "authors": [
+            "Shiniha"
+        ],
+        "description": "Silly little guy"
+    }
+}

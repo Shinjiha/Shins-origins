@@ -1,0 +1,26 @@
+{
+    "name": "§6§lHungry§r§r",
+    "description": "The cracks begin to show. Animals grow wary, skittering from your presence. The world seems different — sharper, crueler. Your body rejects human food; it no longer nourishes, only lingers like ash..",
+    "powers": [ 
+        
+    "fleshgait:passives",
+    "fleshgait:headpat",
+    "fleshgait:uneasy",
+    "fleshgait:transform",
+
+    "fleshgait:desc/18",
+    "fleshgait:desc/16",
+    "fleshgait:desc/17",
+
+    "fleshgait:moderate/fear",
+    "fleshgait:moderate/shader",
+    "fleshgait:moderate/food",
+    "fleshgait:moderate/hunger",
+    "fleshgait:moderate/rate",
+    "fleshgait:moderate/moderate_hunger_dialogue"
+
+    ],
+    "unchoosable": false,
+        "icon":"minecraft:porkchop",
+    "impact": 1
+}

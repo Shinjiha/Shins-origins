@@ -1,0 +1,68 @@
+{
+    "name": "Song of Love",
+    "description": "You can sing an entrancing song, commanding animals into breeding instantly.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Active ability, use with %s."
+        }
+    ],
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "hud_render": {
+        "should_render": true,
+        "bar_index": 21,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "key": "key.origins.secondary_active",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.allay.item_given",
+                "pitch": 1.4,
+                "volume": 0.9
+            },
+            {
+                "type": "origins:area_of_effect",
+                "radius": 8,
+                "bientity_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:target_condition",
+                            "condition": {
+                                "inverted": true,
+                                "type": "origins:attribute",
+                                "attribute": "minecraft:generic.attack_damage",
+                                "comparison": ">",
+                                "compare_to": 0
+                            }
+                        },
+                        {
+                            "type": "origins:can_see"
+                        }
+                    ]
+                },
+                "bientity_action": {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "data modify entity @s Age set value 0"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "data modify entity @s InLove set value 200"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

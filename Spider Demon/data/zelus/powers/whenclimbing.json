@@ -1,0 +1,11 @@
+ {
+    "hidden": true,
+    "condition": {
+        "type": "origins:climbing"
+    },
+    "type": "origins:modify_break_speed",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 6
+    }
+ }

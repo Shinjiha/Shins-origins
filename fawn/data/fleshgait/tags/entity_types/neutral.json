@@ -1,0 +1,13 @@
+{
+    "replace": false,
+    "values": [
+        "bee",
+        "enderman",
+        "goat",
+        "iron_golem",
+        "llama",
+        "polar_bear",
+        "zombified_piglin",
+        "wolf"
+    ]
+}

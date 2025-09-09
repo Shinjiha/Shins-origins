@@ -1,0 +1,46 @@
+{    "hidden": true,
+    "type": "origins:modify_food",
+    "item_condition": {
+            "type": "origins:ingredient",
+            "inverted": true,
+            "ingredient":[         
+            {"item":"minecraft:spider_eye"},
+            {"item":"minecraft:pufferfish"},
+            {"item":"minecraft:tropical_fish"},
+            {"item":"minecraft:chicken"},
+            {"item":"minecraft:cod"},
+            {"item":"minecraft:mutton"},
+            {"item":"minecraft:salmon"},
+            {"item":"minecraft:beef"},
+            {"item":"minecraft:porkchop"},
+            {"item":"minecraft:rabbit"},
+            {"item":"minecraft:rotten_flesh"}]
+        },
+    "prevent_effects": true,
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": [
+            {
+                "effect": "minecraft:weakness",
+                "duration": 1800,
+                "amplifier": 3
+            },
+            {
+                "effect": "minecraft:wither",
+                "duration": 100,
+                "amplifier": 1
+            }
+        ],
+        
+        "food_modifier": {
+            "name": "Minimal Nurishment",
+            "operation": "set_total",
+            "value": 0
+        },
+        "saturation_modifier": {
+            "name": "No Nurishment",
+            "operation": "set_total",
+            "value": 0
+        }
+    }
+}

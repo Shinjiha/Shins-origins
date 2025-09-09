@@ -1,0 +1,1361 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "name": "Shapeshifting Bundle",
+    "description": "Handles shapeshifted animal mimicry, behavior, and suppression.",
+    "shapeshift_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "sprite_location": "fawn:textures/resource_bar.png",
+            "should_render": true,
+            "bar_index": 1
+        }
+    },
+    "team": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "fleshgait:transform_shapeshift_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "team add Mob",
+                        "cooldown": 50000
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "fleshgait:transform_shapeshift_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "team join Mob",
+                        "cooldown": 10
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "fleshgait:transform_shapeshift_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "team leave @s"
+                    }
+                }
+            ]
+        }
+    },
+    "addtoteam": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "fleshgait:transform_shapeshift_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "team join Mob"
+        },
+        "falling_action": {
+            "type": "origins:execute_command",
+            "command": "team leave @s"
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute as @e[type=!player, distance=..30] run team join Mob"
+        }
+    },
+    "animal_spawn": {
+        "type": "origins:action_on_hit",
+        "cooldown": 100,
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:empty"
+                        }
+                    }
+                }
+            ]
+        },
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:axolotl"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Axolotl Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of an Axolotl. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:bat"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Bat Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Bat. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:bee"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Bee Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Bee. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:camel"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Camel Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Camel. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:cat"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Cat Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Cat. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:cave_spider"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Cave Spider Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Cave Spider. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:cod"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Cod Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Cod. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:cow"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Cow Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Cow. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:donkey"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Donkey Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Donkey. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:fox"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Fox Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Fox. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:frog"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Frog Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Frog. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:goat"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Goat Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Goat. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:hoglin"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Hoglin Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Hoglin. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:horse"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Horse Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Horse. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:llama"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Llama Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Llama. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:mooshroom"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Mooshroom Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Mooshroom. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:mule"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Mule Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Mule. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:ocelot"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Ocelot Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of an Ocelot. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:panda"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Panda Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Panda. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:parrot"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Parrot Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Parrot. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:pig"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Pig Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Pig. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:polar_bear"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Polar Bear Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Polar Bear. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:pufferfish"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Pufferfish Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Pufferfish. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:rabbit"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Rabbit Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Rabbit. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:salmon"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Salmon Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Salmon. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:sheep"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Sheep Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Sheep. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:silverfish"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Silverfish Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Silverfish. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:sniffer"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Sniffer Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Sniffer. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:spider"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Spider Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Spider. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:squid"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Squid Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Squid. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:strider"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Strider Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Strider. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:tadpole"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Tadpole Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Tadpole. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:trader_llama"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Trader Llama Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Trader Llama. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:tropical_fish"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Tropical Fish Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Tropical Fish. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:turtle"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Turtle Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Turtle. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:entity_type",
+                                    "entity_type": "minecraft:wolf"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "give @p leather{display:{Name:'{\"text\":\"Wolf Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Wolf. No matter the age, it just never seems to decay.\",\"italic\":true}']}} 1"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "no_attack": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "name": "No Damage While Shapeshifted",
+            "operation": "multiply_total",
+            "value": -1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "fleshgait:transform_shapeshift_resource",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "shapeshift_penalties": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "fleshgait:transform_shapeshift_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:clear_effect",
+                    "effect": "minecraft:speed"
+                },
+                {
+                    "type": "origins:clear_effect",
+                    "effect": "minecraft:jump_boost"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s fleshgait:passives_fix"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "duration": 40,
+                        "amplifier": 1,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:mining_fatigue",
+                        "duration": 40,
+                        "amplifier": 0,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                }
+            ]
+        }
+    },
+    "shapeshift_penaltie_end": {
+        "type": "origins:action_over_time",
+        "interval": 50,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "fleshgait:transform_shapeshift_resource",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        {
+                            "effect": "minecraft:speed",
+                            "duration": -1,
+                            "is_ambient": false,
+                            "show_particles": false,
+                            "show_icon": false
+                        },
+                        {
+                            "effect": "minecraft:jump_boost",
+                            "duration": -1,
+                            "is_ambient": false,
+                            "show_particles": false,
+                            "show_icon": false
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power grant @p fleshgait:passives_fix"
+                }
+            ]
+        }
+    },
+    "normal_shape": {
+        "type": "origins:active_self",
+        "key": "key.use",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "walkers switchShape @p normal"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "fleshgait:transform_shapeshift_resource",
+                    "change": 0,
+                    "operation": "set",
+                    "hud_render": {
+                        "sprite_location": "fawn:textures/resource_bar.png",
+                        "should_render": true,
+                        "bar_index": 2
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{display:{Name:'{\"text\":\"Fawn Skin\",\"color\":\"red\",\"italic\":true}',Lore:['{\"text\":\"It writhes...\",\"color\":\"red\",\"italic\":true}','{\"text\":\"... The skin clings to you..\",\"color\":\"red\",\"italic\":true}','{\"text\":\" It want to be one with you.\",\"color\":\"red\",\"bold\":true,\"italic\":true}']}}"
+            }
+        },
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 2
+        }
+    },
+    "shapeshifting_ability": {
+        "type": "origins:active_self",
+        "key": "key.use",
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": true
+        },
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:leather"
+                }
+            }
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "give @p leather{display:{Name:'{\"text\":\"Fawn Skin\",\"color\":\"red\",\"italic\":true}',Lore:['{\"text\":\"It writhes...\",\"color\":\"red\",\"italic\":true}','{\"text\":\"... The skin clings to you..\",\"color\":\"red\",\"italic\":true}','{\"text\":\" It want to be one with you.\",\"color\":\"red\",\"bold\":true,\"italic\":true}']}} 1"
+                            },
+                            "condition": {
+                                "inverted": true,
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:nbt",
+                                    "nbt": "{display:{Name:'{\"text\":\"Fawn Skin\",\"color\":\"red\",\"italic\":true}',Lore:['{\"text\":\"It writhes...\",\"color\":\"red\",\"italic\":true}','{\"text\":\"... The skin clings to you..\",\"color\":\"red\",\"italic\":true}','{\"text\":\" It want to be one with you.\",\"color\":\"red\",\"bold\":true,\"italic\":true}']}}"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "fleshgait:transform_shapeshift_resource",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:axolotl"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Axolotl Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of an Axolotl. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:bat"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Bat Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Bat. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:bee"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Bee Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Bee. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:camel"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Camel Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Camel. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:cat"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Cat Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Cat. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:cave_spider"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Cave Spider Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Cave Spider. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:cod"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Cod Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Cod. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:cow"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Cow Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Cow. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:donkey"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Donkey Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Donkey. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:fox"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Fox Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Fox. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:frog"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Frog Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Frog. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:goat"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Goat Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Goat. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:hoglin"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Hoglin Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Hoglin. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:horse"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Horse Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Horse. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:llama"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Llama Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Llama. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:mooshroom"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Mooshroom Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Mooshroom. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:mule"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Mule Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Mule. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:ocelot"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Ocelot Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of an Ocelot. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:panda"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Panda Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Panda. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:parrot"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Parrot Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Parrot. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:pig"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Pig Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Pig. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:polar_bear"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Polar Bear Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Polar Bear. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:pufferfish"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Pufferfish Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Pufferfish. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:rabbit"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Rabbit Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Rabbit. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:salmon"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Salmon Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Salmon. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:sheep"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Sheep Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Sheep. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:silverfish"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Silverfish Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Silverfish. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:sniffer"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Sniffer Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Sniffer. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:spider"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Spider Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Spider. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:squid"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Squid Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Squid. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:strider"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Strider Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Strider. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:tadpole"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Tadpole Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Tadpole. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:trader_llama"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Trader Llama Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Trader Llama. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:tropical_fish"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Tropical Fish Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Tropical Fish. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:turtle"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Turtle Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Turtle. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "walkers switchShape @p minecraft:wolf"
+                            },
+                            "condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:equipped_item",
+                                        "equipment_slot": "mainhand",
+                                        "item_condition": {
+                                            "type": "origins:nbt",
+                                            "nbt": "{display:{Name:'{\"text\":\"Wolf Skin\",\"color\":\"red\"}',Lore:['{\"text\":\"The fresh skin of a Wolf. No matter the age, it just never seems to decay.\",\"italic\":true}']}}"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

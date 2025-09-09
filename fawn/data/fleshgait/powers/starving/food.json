@@ -1,0 +1,26 @@
+{    "hidden": true,
+    "type": "origins:modify_food",
+    "prevent_effects": true,
+    "entity_action": {
+        "type": "origins:damage",
+        "amount": 4,
+        "damage_type": "minecraft:generic"
+    },
+    "item_condition": {
+        "type": "origins:ingredient",
+        "inverted": true,
+        "ingredient": {
+            "tag": "fleshgait:rawmeat"
+        }
+    },
+    "food_modifier": {
+        "name": "Minimal Nurishment",
+        "operation": "set_total",
+        "value": 0
+    },
+    "saturation_modifier": {
+        "name": "No Nurishment",
+        "operation": "set_total",
+        "value": 0
+    }
+}

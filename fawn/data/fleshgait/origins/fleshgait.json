@@ -1,0 +1,30 @@
+{
+    "name": "Fleshgait",
+    "description": "A flesh-eating cryptid known for blending in alongside humans.",
+    "powers": [
+        "fleshgait:desc/vor",
+        "fleshgait:desc/sat",
+        "fleshgait:desc/hungry",
+        "fleshgait:desc/rav",
+        "fleshgait:desc/starving",
+
+        "fleshgait:desc/01",
+        "fleshgait:desc/02",
+        "fleshgait:desc/03",
+        "fleshgait:desc/04",
+        "fleshgait:desc/05",
+        "fleshgait:desc/06",
+        "fleshgait:desc/07",
+        "fleshgait:desc/08",
+        "fleshgait:desc/09",
+        "fleshgait:desc/10",
+
+        "fleshgait:passives",
+        "fleshgait:headpat",
+        "fleshgait:headpat_get",
+        "fleshgait:uneasy",
+        "fleshgait:full/rate"
+    ],
+    "impact": 3,
+    "icon": "minecraft:rotten_flesh"
+}

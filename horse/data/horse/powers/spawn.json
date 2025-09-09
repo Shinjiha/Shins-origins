@@ -1,0 +1,53 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "spawn": {
+        "name": "Small",
+        "hidden": false,
+        "description": "You're a horse.",
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "walkers switchShape @p minecraft:horse"
+        },
+        "execute_chosen_when_orb": true,
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "walkers switchShape @p normal"
+        },
+        "entity_action_respawned": {
+            "type": "origins:execute_command",
+            "command": "walkers switchShape @p minecraft:horse"
+        }
+    },
+    "vegetarian_debuff": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "origins:meat"
+                    }
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": [
+                        {
+                            "tag": "origins:ignore_diet"
+                        },
+                        {
+                            "tag": "origins:vegetarian"
+                        }
+                    ],
+                    "inverted": true
+                }
+            ]
+        },
+        "loading_priority": 1
+    }
+}

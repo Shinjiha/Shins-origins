@@ -1,0 +1,36 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "water": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "value": -0.5,
+            "name": "A"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">=",
+            "compare_to": 0.2
+        }
+    },
+    "ouch": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:slowness",
+                "duration": 300,
+                "amplifier": 3
+            }
+        },
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:fall"
+        },
+        "cooldown": 1
+    }
+}

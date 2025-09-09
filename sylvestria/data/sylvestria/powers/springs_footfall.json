@@ -1,0 +1,19 @@
+{
+    "name": "Spring's Footfall",
+    "description": "Life grows from your steps, rarely growing flora wherever you walk.",
+    "type": "origins:action_over_time",
+    "interval": 100,
+    "condition": {
+        "type": "origins:moving"
+    },
+    "entity_action": {
+        "type": "origins:chance",
+        "action": {
+            "type": "origins:block_action_at",
+            "block_action": {
+                "type": "origins:bonemeal"
+            }
+        },
+        "chance": 0.075
+    }
+}

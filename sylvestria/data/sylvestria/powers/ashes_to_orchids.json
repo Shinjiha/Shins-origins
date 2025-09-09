@@ -1,0 +1,119 @@
+{
+    "name": "Ashes to Orchids",
+    "description": "You can bless living beings with healing petals, curing them of all illness.",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Active ability, use with %s."
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "This cures zombie villagers and clears mobs of negative effects."
+        }
+    ],
+    "type": "origins:active_self",
+    "cooldown": 200,
+    "hud_render": {
+        "should_render": true,
+        "bar_index": 11,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "key": "key.origins.primary_active",
+    "entity_action": {
+        "type": "origins:raycast",
+        "before_action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:block.amethyst_block.chime",
+            "category": "players",
+            "pitch": 1,
+            "volume": 1
+        },
+        "command_step": 0.25,
+        "command_along_ray": "particle cherry_leaves",
+        "distance": 16,
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:zombie_villager"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "data modify entity @s ConversionTime set value 1"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:wither"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:poison"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:blindness"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:darkness"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:hunger"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:mining_fatigue"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:nausea"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:slowness"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:unluck"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:weakness"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:bad_omen"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:hero_of_the_village"
+                            },
+                            {
+                                "type": "origins:clear_effect",
+                                "effect": "minecraft:levitation"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

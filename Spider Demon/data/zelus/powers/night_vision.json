@@ -1,0 +1,16 @@
+{
+  "type": "origins:stacking_status_effect",
+  "hidden": true,
+  "min_stacks": -20,
+    "max_stacks": 40,
+    "duration_per_stack": 40,
+    "effect": 
+
+        {
+            "effect": "minecraft:night_vision",
+			"amplifier": 0,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": false
+		}
+}

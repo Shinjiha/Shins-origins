@@ -1,0 +1,21 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "shader": {
+        "type": "origins:shader",
+        "shader": "minecraft:shaders/post/sobel.json",
+        "toggleable": false
+    },
+    "glow": {
+        "type": "origins:entity_glow",
+        "use_teams": false,
+        "bientity_condition": {
+            "type": "origins:distance",
+            "comparison": "<=",
+            "compare_to": 20,
+            "red": 1.0,
+            "green": 0.0,
+            "blue": 0.0
+        }
+    }
+}

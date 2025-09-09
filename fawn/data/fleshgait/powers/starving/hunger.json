@@ -1,0 +1,52 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "fix": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:apply_effect",
+            "effects": [
+                {
+                    "effect": "minecraft:strength",
+                    "amplifier": 6,
+                    "duration": -1,
+                    "is_ambient": false,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:speed",
+                    "amplifier": 6,
+                    "duration": -1,
+                    "is_ambient": false,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:blindness",
+                    "amplifier": 0,
+                    "duration": -1,
+                    "is_ambient": false,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:jump_boost",
+                    "amplifier": 2,
+                    "duration": -1,
+                    "is_ambient": false,
+                    "show_particles": false,
+                    "show_icon": false
+                }
+            ]
+        }
+    },
+    "command": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar {\"text\":\"Their scent drives you insane...\",\"color\":\"red\"}"
+        }
+    }
+}

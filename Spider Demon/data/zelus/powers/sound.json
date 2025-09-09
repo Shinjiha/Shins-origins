@@ -1,0 +1,10 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "playsound minecraft:entity.spider.ambient player @a[distance=..6] ~ ~-1 ~ 10 0.9",
+        "permission_level": 4
+    },
+    "interval": 800,
+    "hidden": true
+}

@@ -1,0 +1,19 @@
+{
+    "name": "§a§lSatiated§r§",
+    "description": "You're calm, almost human. Your instincts lie dormant, dulled by fullness. Though weaker, this state allows you to blend in.",
+    "powers": [        
+    "fleshgait:passives",
+    "fleshgait:headpat",
+    "fleshgait:uneasy",
+    "fleshgait:transform",
+    
+    "fleshgait:desc/11",
+    "fleshgait:desc/12",
+    "fleshgait:desc/13",
+
+    "fleshgait:full/mild_hunger_dialogue",
+    "fleshgait:full/content"
+    ],
+    "impact": 1,
+    "icon":"minecraft:rabbit_stew"
+}

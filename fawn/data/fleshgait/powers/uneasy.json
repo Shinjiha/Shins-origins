@@ -1,0 +1,18 @@
+{
+    
+    "hidden": true,
+    "type": "origins:multiple",
+    "key0": {
+        "type": "origins:simple"
+    },
+    "key1": {
+        "type": "origins:prevent_entity_use",
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:villager"
+            }
+        }
+    }
+}

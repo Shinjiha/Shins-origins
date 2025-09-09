@@ -1,0 +1,36 @@
+{
+    "type": "apoli:prevent_item_use",
+    "hidden": true,
+    "item_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "apoli:ingredient",
+                "ingredient": [
+                    {
+                        "item": "minecraft:lingering_potion"
+                    },
+                    {
+                        "item": "minecraft:potion"
+                    },
+                    {
+                        "item": "minecraft:splash_potion"
+                    }
+                ]
+            },
+            {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:nbt",
+                        "nbt": "{Potion:'minecraft:invisibility'}"
+                    },
+                    {
+                        "type": "origins:nbt",
+                        "nbt": "{Potion:'minecraft:long_invisibility'}"
+                    }
+                ]
+            }
+        ]
+    }
+}

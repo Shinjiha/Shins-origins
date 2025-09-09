@@ -1,0 +1,11 @@
+{
+	"hidden": true,
+    "type": "origins:modify_jump",
+    "modifier": {
+        "operation": "addition",
+        "value": 0.25
+    }, "entity_action": {
+        "type": "origins:execute_command",
+        "command": "particle small_flame ~ ~ ~ 0.3 0.3 0.3 0.01 16 normal @a"
+    }
+}

@@ -1,0 +1,29 @@
+{
+	"powers": [
+		"zelus:spawn",
+		"zelus:fire",
+		"zelus:master_of_webs",
+		"zelus:anthropod",
+		"zelus:climbing",
+		"zelus:fall",
+		"zelus:webpouch",
+		"zelus:health",
+		"zelus:iron_mad",
+		"zelus:jump",
+		"zelus:night_vision",
+		"zelus:potion",
+		"zelus:sound",
+		"zelus:string",
+		"zelus:team",
+		"zelus:teamremove",
+		"zelus:trade",
+		"zelus:weakness",
+		"zelus:whenclimbing",
+		"zelus:cooldowns"
+	],
+	"icon": "minecraft:spider_eye",
+	"order": 10,
+	"impact": 3,
+	"name": "Spider Demon",
+	"description": "§c§n§lOnly for Pickerbee!§r§r§r"
+}

@@ -1,0 +1,45 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+		"type": "origins:and",
+        "actions": [
+		{
+             "type": "origins:execute_command",
+             "command": "team add arthropodss",
+             "permission_level": 4
+		},
+		{
+			 "type": "origins:execute_command",
+             "command": "team join arthropodss",
+             "permission_level": 4
+		},
+		{
+			 "type": "origins:execute_command",
+             "command": "team join arthropodss @e[type=minecraft:cave_spider,distance=..40]",
+             "permission_level": 4
+		},
+		{
+			 "type": "origins:execute_command",
+             "command": "team join arthropodss @e[type=minecraft:spider,distance=..40]",
+             "permission_level": 4
+		},
+		{
+			 "type": "origins:execute_command",
+             "command": "team join arthropodss @e[type=minecraft:silverfish,distance=..40]",
+             "permission_level": 4
+		},
+		{
+			 "type": "origins:execute_command",
+             "command": "team join arthropodss @e[type=minecraft:endermite,distance=..40]",
+             "permission_level": 4
+		},
+		{
+			 "type": "origins:execute_command",
+             "command": "team join arthropodss @e[type=minecraft:bee,distance=..40]",
+             "permission_level": 4
+		}
+	]
+    },
+    "interval": 6,
+    "hidden": true
+}

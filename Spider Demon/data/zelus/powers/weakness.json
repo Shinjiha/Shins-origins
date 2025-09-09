@@ -1,0 +1,30 @@
+{
+	"name": "§cHybrid §cWeakness",
+	"description": "You get weakness when inside the water and iron golems attack you on sight.",
+  "hidden": false,
+  "type": "origins:stacking_status_effect",
+  "min_stacks": -20,
+    "max_stacks": 10,
+    "duration_per_stack": 10,
+    "effect": 
+        {
+            "effect": "minecraft:weakness",
+			"amplifier": 1,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+		},
+		"condition": {
+		"type": "origins:or",
+		"conditions": [{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:water",
+				"comparison": ">",
+				"compare_to": 0.0
+			},
+			{
+				"type": "origins:in_rain"
+			}
+		]
+	}
+}

@@ -1,0 +1,11 @@
+{
+  "name": "§aWeb §aPouch",
+  "description": "You have a natural pouch to store a few items in.",
+	"hidden": false,
+	"title": "Web Pouch",
+    "type": "origins:inventory",
+    "drop_on_death": true,
+	  "key": {
+    "key": "key.loadToolbarActivator"
+  }
+}

@@ -1,0 +1,41 @@
+{
+    "type": "origins:action_over_time",
+    "name": "§aFire §aResistance",
+    "description": "Grants you Fire Resistance for 15 seconds when you are on fire",
+    "interval": 1,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "zelus:cooldowns_fire_cd",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:on_fire"
+            }
+        ]
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:apply_effect",
+                "effects": [
+                    {
+                        "effect": "minecraft:fire_resistance",
+                        "duration": 450,
+                        "amplifier": 1,
+                        "show_particles": false,
+                        "show_icon": false
+                    }
+                ]
+            },
+            {
+                "type": "origins:trigger_cooldown",
+                "power": "zelus:cooldowns_fire_cd"
+            }
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+	"powers": [
+	],
+	"icon": "minecraft:bread",
+	"order": 11,
+	"impact": 3,
+	"name": "Bread",
+	"description": "Bread"
+}

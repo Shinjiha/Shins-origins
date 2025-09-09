@@ -1,0 +1,25 @@
+{
+    "name": "§4§lStarving§r§r",
+    "description": "You are hunger. No weapons, no tools — just claw, tooth, and rage. The world fades into grayscale, and the skin of civility peels away. Human food poisons you. Meat alone won't do. You need someone. You need to devour, to become whole again.",
+    "powers": [
+        "fleshgait:passives",
+        "fleshgait:uneasy",
+        "fleshgait:severe/fear2",
+        "fleshgait:starving/food",
+        "fleshgait:starving/hunger",
+        "fleshgait:starving/starvation_dialogue",
+        "fleshgait:starving/starvingdebuff",
+        "fleshgait:starving/rate",
+        "fleshgait:starving/shader",
+
+        "fleshgait:desc/21",
+        "fleshgait:desc/22",
+        "fleshgait:desc/23",
+        "fleshgait:desc/24",
+        "fleshgait:desc/25",
+        "fleshgait:desc/26"
+    ],
+    "unchoosable": false,
+    "impact": 3,
+    "icon": "minecraft:spider_eye"
+}

@@ -1,0 +1,13 @@
+{
+	"name": "§aHybrid §aBody",
+	"description": "You jump higher, have night vision, you can climb walls, arthropods don't attack you and you don't take fall damage.",
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "fall"
+    },
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -1
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "name": "Head Pats",
+    "description": "You can get headpats!",
+    "hidden": true,
+    "type": "origins:action_on_being_used",
+    "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "/tellraw @s {\"text\":\"You got a head pat!,\",\"color\":\"white\"}"
+                },
+                                {
+                    "type": "origins:execute_command",
+                    "command": "/effect give @s minecraft:regeneration 1 10 true"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle heart ~ ~0.5 ~ 0.3 0.3 0.3 0.009 4 normal @a"
+                }
+            ]
+        }
+    },
+    "item_condition": {
+        "type": "origins:empty"
+    },
+    "hands": [
+        "main_hand"
+    ],
+    "condition": {
+        "type": "origins:sneaking"
+    }
+}

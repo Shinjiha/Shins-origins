@@ -1,0 +1,94 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "claws": {
+        "type": "origins:modify_damage_dealt",
+        "name": "power name",
+        "description": "desc here",
+        "modifier": {
+            "value": 10,
+            "operation": "addition"
+        },
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:air"
+                }
+            }
+        }
+    },
+    "no_sword": {
+        "type": "origins:modify_damage_dealt",
+        "name": "power name",
+        "description": "desc here",
+        "modifier": {
+            "value": 0,
+            "operation": "set_total"
+        },
+        "condition": {
+            "inverted": true,
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:air"
+                }
+            }
+        }
+    },
+    "noarmor": {
+        "type": "origins:restrict_armor",
+        "head": {
+            "type": "origins:armor_value",
+            "comparison": ">",
+            "compare_to": 1
+        },
+        "chest": {
+            "type": "origins:armor_value",
+            "comparison": ">",
+            "compare_to": 1
+        },
+        "legs": {
+            "type": "origins:armor_value",
+            "comparison": ">",
+            "compare_to": 1
+        },
+        "feet": {
+            "type": "origins:armor_value",
+            "comparison": ">",
+            "compare_to": 1
+        }
+    },
+    "fixing_that": {
+        "type": "origins:action_on_callback",
+        "entity_action_lost": {
+            "type": "origins:clear_effect",
+            "effect": "minecraft:blindness"
+        }
+    },
+    "fixing_that1": {
+        "type": "origins:action_on_callback",
+        "entity_action_lost": {
+            "type": "origins:clear_effect",
+            "effect": "minecraft:speed"
+        }
+    },
+    "fixing_that3": {
+        "type": "origins:action_on_callback",
+        "entity_action_lost": {
+            "type": "origins:clear_effect",
+            "effect": "minecraft:jump_boost"
+        }
+    },
+    "fixing_that2": {
+        "type": "origins:action_on_callback",
+        "entity_action_lost": {
+            "type": "origins:clear_effect",
+            "effect": "minecraft:strength"
+        }
+    }
+}
