@@ -112,5 +112,27 @@
                 "amount": 5
             }
         ]
+    },
+    "phantoms": {
+        "hidden": true,
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "team add pha"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join pha @s"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join pha @e[type=minecraft:phantom]"
+                }
+            ]
+        }
     }
 }
