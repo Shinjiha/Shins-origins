@@ -1,7 +1,7 @@
 {
   "pack": {
-    "pack_format": 10,
-    "description": "Horse - Origin for Farronwoods"
-  
+    "pack_format": 15,
+    "version": "1.0.0",
+    "description": "Horse - Origin for Farronwoods made by Shin"
   }
 }

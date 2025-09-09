@@ -26,5 +26,6 @@
         "fleshgait:full/rate"
     ],
     "impact": 3,
-    "icon": "minecraft:rotten_flesh"
+    "icon": "minecraft:rotten_flesh",
+    "hidden": true
 }

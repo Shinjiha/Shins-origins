@@ -1,6 +1,7 @@
 {
     "pack": {
-        "description": "Soul Husk Origin for Train",
-        "pack_format": 17
+        "description": "Soul Husk - Origin for Train made by Shin",
+        "pack_format": 15,
+        "version": "1.0.0"
     }
 }
